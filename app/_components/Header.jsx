@@ -18,7 +18,7 @@ function Header() {
   
 const [categoryList, setCategoryList] = useState([]);
 
-console.log(categoryList)
+
 
  useEffect(()=>{
     getCategoryList();
@@ -30,7 +30,7 @@ console.log(categoryList)
 
   const getCategoryList = () => {
     GlobalApi.getCategory().then(resp => {
-      setCategoryList(resp.data.data)
+      setCategoryList(resp.data.data);
     })
   }
   return (
@@ -47,7 +47,7 @@ console.log(categoryList)
                       <DropdownMenuSeparator />
                       {categoryList.map((category,index)=> (
                         <DropdownMenuItem key={index}>
-                        <h2>{category.attributes.name}</h2>
+                        <h2>{category?.attributes?.Name}</h2>
                         </DropdownMenuItem>
                       ))}
                       
