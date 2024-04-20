@@ -26,7 +26,7 @@ function Slider({sliderList}) {
       <CarouselPrevious />
     </CarouselItem>
   ))}
-    <CarouselItem>...</CarouselItem>
+   
     
   </CarouselContent>
   <CarouselPrevious />
