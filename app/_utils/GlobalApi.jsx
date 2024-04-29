@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const axiosClient = axios.create({
-    baseURL: 'http://172.16.60.149:1337/api'
+    baseURL: 'http://192.168.100.6:1337/api'
 });
 
 
@@ -19,9 +19,15 @@ const getCategoryList = () => axiosClient.get('/categories?populate=*').then(res
 const getAllProducts = () => axiosClient.get('/products?populate=*').then(resp => {
     return resp.data.data;
 })
+
+const getProductsByCategory= (category) => axiosClient.get('products?filters[categories][name][Sin]=' + category + '&populate=*').then(resp => {
+    return resp.data.data;
+})
+
 export default{
     getCategory,
     getSliders,
     getCategoryList,
-    getAllProducts
+    getAllProducts,
+    getProductsByCategory
 }

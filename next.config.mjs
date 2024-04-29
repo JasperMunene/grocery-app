@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode:false,
     images: {
-        domains: ['172.16.60.149']
+        domains: ['192.168.100.6']
     }
 };
 

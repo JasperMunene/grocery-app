@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 
@@ -8,7 +9,7 @@ function CategoryList({categoryList}) {
         <h2 className='text-green-600 text-2xl font-bold'>Shop by Category</h2>
         <div className='grid grid-cols-2  md:grid-cols-6 gap-5 mt-2'>
         {categoryList.map((category, index) => (
-          <div key={index} className='flex flex-col items-center bg-green-50 gap-2 p-4  rounded-lg group cursor-pointer hover:bg-green-200'>
+          <Link href={'/products-category/' + category.attributes.name} key={index} className='flex flex-col items-center bg-green-50 gap-2 p-4  rounded-lg group cursor-pointer hover:bg-green-200'>
             <Image
               src={
                 process.env.NEXT_PUBLIC_BACKEND_BASE_URL +
@@ -21,7 +22,7 @@ function CategoryList({categoryList}) {
             />
             <h2 className='text-green-800'>{category?.attributes?.name}</h2>
             
-          </div>
+          </Link>
         ))}
       </div>
     </div>

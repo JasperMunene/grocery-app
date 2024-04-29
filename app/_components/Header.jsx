@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Link from 'next/link'
 
 
 function Header() {
@@ -48,6 +49,7 @@ useEffect(() => {
                       <DropdownMenuLabel>Browse Category</DropdownMenuLabel>
                       <DropdownMenuSeparator />
                       {categoryList.map((category,index)=> (
+                        <Link href={'/products-category/'+ category.attributes.name}>
                         <DropdownMenuItem key={index} className="flex gap-3 items-center cursor-pointer">
                         <Image
                         src={
@@ -62,6 +64,7 @@ useEffect(() => {
                       
                         <h2 className='text-lg'>{category?.attributes?.name}</h2>
                         </DropdownMenuItem>
+                        </Link>
                       ))}
                       
                     </DropdownMenuContent>
